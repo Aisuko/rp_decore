@@ -8,6 +8,7 @@
             "program": "${workspaceFolder}/scripts/main.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python",
             "env": {
                 "PYTHONPATH": "${workspaceFolder}"
             },
@@ -23,6 +24,7 @@
             "program": "${workspaceFolder}/scripts/main.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python",
             "env": {
                 "PYTHONPATH": "${workspaceFolder}"
             },
@@ -39,6 +41,7 @@
             "program": "${workspaceFolder}/scripts/main.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python",
             "env": {
                 "PYTHONPATH": "${workspaceFolder}"
             },
@@ -54,6 +57,7 @@
             "program": "${workspaceFolder}/src/metrics/truthfulqa_gen.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python",
             "env": {
                 "PYTHONPATH": "${workspaceFolder}"
             },

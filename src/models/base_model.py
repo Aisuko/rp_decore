@@ -27,8 +27,7 @@ class BaseModel(ABC):
                 use_flash_attention_2="flash_attention_2",
                 attn_implementation="flash_attention_2",
                 torch_dtype=torch.bfloat16,
-                device_map="auto",
-            ).eval()
+            ).eval().cuda()
             self.attn_mode = "flash"
         elif "mistral" in model_configs.name.lower():
             self.model = MistralForCausalLM.from_pretrained(
@@ -36,9 +35,8 @@ class BaseModel(ABC):
                 use_flash_attention_2="flash_attention_2",
                 attn_implementation="flash_attention_2",
                 torch_dtype="auto",
-                device_map="auto",
                 trust_remote_code=True,
-            ).eval()
+            ).eval().cuda()
             self.attn_mode = "flash"
         elif "qwen2" in model_configs.name.lower():
             self.model = Qwen2ForCausalLM.from_pretrained(
@@ -46,8 +44,7 @@ class BaseModel(ABC):
                 use_flash_attention_2="flash_attention_2",
                 attn_implementation="flash_attention_2",
                 torch_dtype="auto",
-                device_map="auto",
-            ).eval()
+            ).eval().cuda()
             self.attn_mode = "flash"
 
         self.tokenizer = AutoTokenizer.from_pretrained(
