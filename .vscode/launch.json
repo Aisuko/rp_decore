@@ -1,0 +1,65 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DeCoRe Main",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "experiment=memo_trap/decore_entropy/llama3_8b_instruct",
+                "decoder.configs.num_retrieval_heads=100"
+            ]
+        },
+        {
+            "name": "DeCoRe NQ Closed Book",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "experiment=nq/decore_entropy/llama3_8b_instruct",
+                "decoder.configs.num_retrieval_heads=10",
+                "data.variation=closed_book"
+            ]
+        },
+        {
+            "name": "DeCoRe Debug Mode",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "experiment=memo_trap/decore_entropy/llama3_8b_instruct",
+                "debug=true"
+            ]
+        },
+        {
+            "name": "TruthfulQA Evaluation",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/metrics/truthfulqa_gen.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [
+                "--pred_filepath=path/to/truthfulqa_model_prediction.json"
+            ]
+        }
+    ]
+}
